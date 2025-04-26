@@ -23,13 +23,18 @@ public class PresenterTest
         
         earnCookies.Execute();
         
-        cookieDisplay.displayedCookies.Should().Be(1);
+        cookieDisplay.DisplayedCookies.Should().Be(1);
     }
 }
 
-public class CookieDisplay
+public interface ICookieDisplay
 {
-    public int displayedCookies = 1;
+    int DisplayedCookies { get; }
+}
+
+public class CookieDisplay : ICookieDisplay
+{
+    public int DisplayedCookies { get; } = 1;
 }
 
 public class EarnCookies
