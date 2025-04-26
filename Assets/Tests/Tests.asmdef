@@ -5,7 +5,8 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "BoundfoxStudios.FluentAssertions",
-        "Model"
+        "Model",
+        "Presenter"
     ],
     "includePlatforms": [
         "Editor"
