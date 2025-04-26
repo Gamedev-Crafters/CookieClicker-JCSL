@@ -24,6 +24,14 @@ public class CookieTest
 
         cookieStore.cookies.Should().Be(2);
     }
+    
+    [Test]
+    public void newCookieStoreHasZeroCookies()
+    {
+        var cookieStore = new CookieStore();
+
+        cookieStore.cookies.Should().Be(0);
+    }
 }
 
 internal class CookieStore
