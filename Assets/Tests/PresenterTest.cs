@@ -18,13 +18,15 @@ public class PresenterTest
 
 public class EarnCookies
 {
+    CookieStore cookieStore;
+    
     public EarnCookies(CookieStore cookieStore)
     {
-        throw new System.NotImplementedException();
+        this.cookieStore = cookieStore;
     }
 
     public void Execute()
     {
-        throw new System.NotImplementedException();
+        cookieStore.EarnCookie();
     }
 }
