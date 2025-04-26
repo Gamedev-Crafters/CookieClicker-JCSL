@@ -18,7 +18,7 @@ public class PresenterTest
     public void EarnCookiesGetsDisplayed()
     {
         var cookieStore = new CookieStore();
-        var cookieDisplay = new CookieDisplay();
+        var cookieDisplay = new FakeCookieDisplay();
         var earnCookies = new EarnCookies(cookieStore, cookieDisplay);
         
         earnCookies.Execute();
@@ -32,7 +32,7 @@ public interface ICookieDisplay
     int DisplayedCookies { get; }
 }
 
-public class CookieDisplay : ICookieDisplay
+public class FakeCookieDisplay : ICookieDisplay
 {
     public int DisplayedCookies { get; } = 1;
 }
@@ -40,14 +40,14 @@ public class CookieDisplay : ICookieDisplay
 public class EarnCookies
 {
     CookieStore cookieStore;
-    CookieDisplay cookieDisplay;
+    ICookieDisplay cookieDisplay;
     
     public EarnCookies(CookieStore cookieStore)
     {
         this.cookieStore = cookieStore;
     }
     
-    public EarnCookies(CookieStore cookieStore, CookieDisplay cookieDisplay)
+    public EarnCookies(CookieStore cookieStore, ICookieDisplay cookieDisplay)
     {
         this.cookieStore = cookieStore;
         this.cookieDisplay = cookieDisplay;
