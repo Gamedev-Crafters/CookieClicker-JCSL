@@ -32,14 +32,9 @@ public class CookieTest
 
         cookieStore.cookies.Should().Be(0);
     }
-}
-
-internal class CookieStore
-{
-    public int cookies;
-
-    public void EarnCookie()
-    {
-        cookies++;
-    }
+    
+    /* Tests:
+     - Cookies below 0 are not allowed
+     */
+    
 }
