@@ -1,4 +1,3 @@
-
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -14,15 +13,39 @@ public class PresenterTest
 
         cookieStore.cookies.Should().Be(1);
     }
+
+    [Test]
+    public void EarnCookiesGetsDisplayed()
+    {
+        var cookieStore = new CookieStore();
+        var cookieDisplay = new CookieDisplay();
+        var earnCookies = new EarnCookies(cookieStore, cookieDisplay);
+        
+        earnCookies.Execute();
+        
+        cookieDisplay.displayedCookies.Should().Be(1);
+    }
+}
+
+public class CookieDisplay
+{
+    public int displayedCookies = 1;
 }
 
 public class EarnCookies
 {
     CookieStore cookieStore;
+    CookieDisplay cookieDisplay;
     
     public EarnCookies(CookieStore cookieStore)
     {
         this.cookieStore = cookieStore;
+    }
+    
+    public EarnCookies(CookieStore cookieStore, CookieDisplay cookieDisplay)
+    {
+        this.cookieStore = cookieStore;
+        this.cookieDisplay = cookieDisplay;
     }
 
     public void Execute()
