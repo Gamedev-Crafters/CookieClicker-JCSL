@@ -5,7 +5,7 @@ using NUnit.Framework;
 public class CookieTest
 {
     [Test]
-    public void earnOneCookie()
+    public void EarnOneCookie()
     {
         var cookieStore = new CookieStore();
 
@@ -15,7 +15,7 @@ public class CookieTest
     }
     
     [Test]
-    public void earnTwoCookies()
+    public void EarnTwoCookies()
     {
         var cookieStore = new CookieStore();
 
@@ -26,7 +26,7 @@ public class CookieTest
     }
     
     [Test]
-    public void newCookieStoreHasZeroCookies()
+    public void NewCookieStoreHasZeroCookies()
     {
         var cookieStore = new CookieStore();
 
@@ -40,6 +40,6 @@ internal class CookieStore
 
     public void EarnCookie()
     {
-        cookies = 1;
+        cookies++;
     }
 }
