@@ -13,6 +13,17 @@ public class CookieTest
 
         cookieStore.cookies.Should().Be(1);
     }
+    
+    [Test]
+    public void earnTwoCookies()
+    {
+        var cookieStore = new CookieStore();
+
+        cookieStore.EarnCookie();
+        cookieStore.EarnCookie();
+
+        cookieStore.cookies.Should().Be(2);
+    }
 }
 
 internal class CookieStore
