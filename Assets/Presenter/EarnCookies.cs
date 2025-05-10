@@ -7,11 +7,12 @@ public class EarnCookies
     {
         this.cookieStore = cookieStore;
         this.cookieDisplay = cookieDisplay;
+        cookieDisplay.DisplayCookies(cookieStore.cookies);
     }
 
     public void Execute()
     {
         cookieStore.EarnCookie();
-        cookieDisplay.DisplayedCookies = cookieStore.cookies;
+        cookieDisplay.DisplayCookies(cookieStore.cookies);
     }
 }

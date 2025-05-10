@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -7,20 +8,20 @@ public class CookieButtonView : MonoBehaviour, ICookieDisplay
     EarnCookies earnCookies;
     TMP_Text  cookiesLabel;
     
-    public int DisplayedCookies { get; set; }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+       cookiesLabel = gameObject.GetComponentInChildren<TMP_Text>();
        cookieStore = new CookieStore();
        earnCookies = new EarnCookies(cookieStore, this);
-       cookiesLabel = gameObject.GetComponentInChildren<TMP_Text>();
     }
 
     public void ClickCookiButton()
     {
         earnCookies.Execute();
-        cookiesLabel.text = DisplayedCookies.ToString();
     }
 
+    public void DisplayCookies(int cookies)
+    {
+        cookiesLabel.text = cookies.ToString();
+    }
 }
