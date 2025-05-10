@@ -10,9 +10,11 @@ public class EarnCookies
         cookieDisplay.DisplayCookies(cookieStore.cookies);
     }
 
+    public int Multiplier { get; set; } = 1;
+
     public void Execute()
     {
-        cookieStore.EarnCookie();
+        cookieStore.EarnCookie(Multiplier);
         cookieDisplay.DisplayCookies(cookieStore.cookies);
     }
 }
