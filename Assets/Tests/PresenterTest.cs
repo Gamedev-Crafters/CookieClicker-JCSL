@@ -7,7 +7,7 @@ public class PresenterTest
     public void EarnCookies()
     {
         var cookieStore = new CookieStore();
-        var earnCookies = new EarnCookies(cookieStore);
+        var earnCookies = new EarnCookies(cookieStore, new FakeCookieDisplay());
 
         earnCookies.Execute();
 
@@ -29,5 +29,5 @@ public class PresenterTest
 
 public class FakeCookieDisplay : ICookieDisplay
 {
-    public int DisplayedCookies { get; } = 1;
+    public int DisplayedCookies { get; set; } = 0;
 }

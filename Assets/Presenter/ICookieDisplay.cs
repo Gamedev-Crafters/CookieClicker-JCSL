@@ -1,4 +1,4 @@
 public interface ICookieDisplay
 {
-    int DisplayedCookies { get; }
+    int DisplayedCookies { get; set; }
 }

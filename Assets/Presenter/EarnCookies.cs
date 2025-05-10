@@ -3,11 +3,6 @@ public class EarnCookies
     CookieStore cookieStore;
     ICookieDisplay cookieDisplay;
     
-    public EarnCookies(CookieStore cookieStore)
-    {
-        this.cookieStore = cookieStore;
-    }
-    
     public EarnCookies(CookieStore cookieStore, ICookieDisplay cookieDisplay)
     {
         this.cookieStore = cookieStore;
@@ -17,5 +12,6 @@ public class EarnCookies
     public void Execute()
     {
         cookieStore.EarnCookie();
+        cookieDisplay.DisplayedCookies = cookieStore.cookies;
     }
 }

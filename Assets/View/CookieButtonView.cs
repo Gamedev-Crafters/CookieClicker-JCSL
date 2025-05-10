@@ -7,8 +7,8 @@ public class CookieButtonView : MonoBehaviour, ICookieDisplay
     EarnCookies earnCookies;
     TMP_Text  cookiesLabel;
     
-    public int DisplayedCookies { get; }
-    
+    public int DisplayedCookies { get; set; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
