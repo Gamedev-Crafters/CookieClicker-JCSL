@@ -14,11 +14,9 @@ namespace Presenter
             cookieDisplay.DisplayCookies(cookieStore.cookies);
         }
 
-        public int Multiplier { get; set; } = 1;
-
         public void Execute()
         {
-            cookieStore.EarnCookie(Multiplier);
+            cookieStore.EarnCookie();
             cookieDisplay.DisplayCookies(cookieStore.cookies);
         }
     }

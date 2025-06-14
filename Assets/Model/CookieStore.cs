@@ -4,9 +4,11 @@ namespace Model
     {
         public int cookies;
     
-        public void EarnCookie(int clickMultiplier = 1)
+        public int multiplier = 1;
+        
+        public void EarnCookie()
         {
-            cookies += clickMultiplier;
+            cookies += multiplier;
         }
     }
 }

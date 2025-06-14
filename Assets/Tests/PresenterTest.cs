@@ -34,7 +34,7 @@ public class PresenterTest
         var cookieStore = new CookieStore();
         var cookieDisplay = new FakeCookieDisplay();
         var earnCookies = new EarnCookies(cookieStore, cookieDisplay);
-        earnCookies.Multiplier = 2;
+        cookieStore.multiplier = 2;
         
         earnCookies.Execute();
         
