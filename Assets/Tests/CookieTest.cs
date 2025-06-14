@@ -38,7 +38,7 @@ public class CookieTest
     public void ApplyMultiplier()
     {
         var cookieStore = new CookieStore();
-        cookieStore.multiplier = 2;
+        cookieStore.clickMultiplier = 2;
         
         cookieStore.EarnCookie();
         

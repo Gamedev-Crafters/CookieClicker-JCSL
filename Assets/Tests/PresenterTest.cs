@@ -28,6 +28,32 @@ public class PresenterTest
         cookieDisplay.DisplayedCookies.Should().Be(1);
     }
 
+    [Test]
+
+    public void EarnMultiplier()
+    {
+        var cookieStore = new CookieStore();
+        var buyUpgrades = new BuyUpgrades(cookieStore);
+
+        buyUpgrades.Execute();
+        
+        cookieStore.clickMultiplier.Should().Be(2);
+    }
+}
+
+public class BuyUpgrades
+{
+    CookieStore cookieStore;
+    
+    public BuyUpgrades(CookieStore cookieStore)
+    {
+        this.cookieStore = cookieStore;
+    }
+
+    public void Execute()
+    {
+        cookieStore.EarnClickMultiplier();
+    }
 }
 
 public class FakeCookieDisplay : ICookieDisplay
