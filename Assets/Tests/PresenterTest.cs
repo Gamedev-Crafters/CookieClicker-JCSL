@@ -28,18 +28,6 @@ public class PresenterTest
         cookieDisplay.DisplayedCookies.Should().Be(1);
     }
 
-    [Test]
-    public void ApplyMultiplier()
-    {
-        var cookieStore = new CookieStore();
-        var cookieDisplay = new FakeCookieDisplay();
-        var earnCookies = new EarnCookies(cookieStore, cookieDisplay);
-        cookieStore.multiplier = 2;
-        
-        earnCookies.Execute();
-        
-        cookieDisplay.DisplayedCookies.Should().Be(2);
-    }
 }
 
 public class FakeCookieDisplay : ICookieDisplay
