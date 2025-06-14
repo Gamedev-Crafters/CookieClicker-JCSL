@@ -40,27 +40,3 @@ public class PresenterTest
         cookieStore.clickMultiplier.Should().Be(2);
     }
 }
-
-public class BuyUpgrades
-{
-    CookieStore cookieStore;
-    
-    public BuyUpgrades(CookieStore cookieStore)
-    {
-        this.cookieStore = cookieStore;
-    }
-
-    public void Execute()
-    {
-        cookieStore.EarnClickMultiplier();
-    }
-}
-
-public class FakeCookieDisplay : ICookieDisplay
-{
-    public int DisplayedCookies { get; set; } = 0;
-    public void DisplayCookies(int cookies)
-    {
-        DisplayedCookies = cookies;
-    }
-}
