@@ -18,6 +18,9 @@ public class CookieButtonView : MonoBehaviour, ICookieDisplay, IClickMultiplierD
        cookieStore = new CookieStore();
        earnCookies = new EarnCookies(cookieStore, this);
        buyUpgrades = new BuyUpgrades(cookieStore, this);
+       
+       DisplayCookies(cookieStore.cookies);
+       DisplayClickMultiplier(cookieStore.clickMultiplier);
     }
 
     public void ClickCookiButton()
