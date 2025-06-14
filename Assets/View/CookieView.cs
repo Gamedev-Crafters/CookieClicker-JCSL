@@ -4,17 +4,16 @@ using Presenter;
 using TMPro;
 using UnityEngine;
 
-public class CookieButtonView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
+public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
 {
     CookieStore cookieStore;
     EarnCookies earnCookies;
     BuyUpgrades buyUpgrades;
-    TMP_Text  cookiesLabel;
+    public TMP_Text  cookiesLabel;
     public TMP_Text clickMultiplierLabel;
     
     void Start()
     {
-       cookiesLabel = gameObject.GetComponentInChildren<TMP_Text>();
        cookieStore = new CookieStore();
        earnCookies = new EarnCookies(cookieStore, this);
        buyUpgrades = new BuyUpgrades(cookieStore, this);
