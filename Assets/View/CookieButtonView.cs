@@ -16,7 +16,7 @@ public class CookieButtonView : MonoBehaviour, ICookieDisplay
        cookiesLabel = gameObject.GetComponentInChildren<TMP_Text>();
        cookieStore = new CookieStore();
        earnCookies = new EarnCookies(cookieStore, this);
-       buyUpgrades = new BuyUpgrades(cookieStore);
+       buyUpgrades = new BuyUpgrades(cookieStore, null);
     }
 
     public void ClickCookiButton()

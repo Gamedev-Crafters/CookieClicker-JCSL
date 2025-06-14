@@ -29,14 +29,25 @@ public class PresenterTest
     }
 
     [Test]
-
     public void EarnMultiplier()
     {
         var cookieStore = new CookieStore();
-        var buyUpgrades = new BuyUpgrades(cookieStore);
+        var buyUpgrades = new BuyUpgrades(cookieStore, new FakeCookieDisplay());
 
         buyUpgrades.Execute();
         
         cookieStore.clickMultiplier.Should().Be(2);
+    }
+    
+    [Test]
+    public void EarnMultiplierGetsDisplayed()
+    {   
+        var cookieStore = new CookieStore();
+        var clickMultiplierDisplay = new FakeCookieDisplay();
+        var buyUpgrades = new BuyUpgrades(cookieStore, clickMultiplierDisplay);
+        
+        buyUpgrades.Execute();
+        
+        clickMultiplierDisplay.DisplayedClickMultiplier.Should().Be(2);
     }
 }

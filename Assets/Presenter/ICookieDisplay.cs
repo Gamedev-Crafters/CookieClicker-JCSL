@@ -1,4 +1,7 @@
-public interface ICookieDisplay
+namespace Presenter
 {
-    void DisplayCookies(int cookies);
+    public interface ICookieDisplay
+    {
+        void DisplayCookies(int cookies);
+    }
 }
