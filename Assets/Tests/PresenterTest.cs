@@ -1,5 +1,7 @@
 using FluentAssertions;
+using Model;
 using NUnit.Framework;
+using Presenter;
 
 public class PresenterTest
 {

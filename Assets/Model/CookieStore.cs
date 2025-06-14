@@ -1,9 +1,12 @@
-public class CookieStore
+namespace Model
 {
-    public int cookies;
-    
-    public void EarnCookie(int clickMultiplier = 1)
+    public class CookieStore
     {
-        cookies += clickMultiplier;
+        public int cookies;
+    
+        public void EarnCookie(int clickMultiplier = 1)
+        {
+            cookies += clickMultiplier;
+        }
     }
 }

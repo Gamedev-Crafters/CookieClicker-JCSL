@@ -1,4 +1,5 @@
 using FluentAssertions;
+using Model;
 using NUnit;
 using NUnit.Framework;
 
