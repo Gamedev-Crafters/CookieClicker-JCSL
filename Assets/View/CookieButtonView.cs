@@ -8,6 +8,7 @@ public class CookieButtonView : MonoBehaviour, ICookieDisplay
 {
     CookieStore cookieStore;
     EarnCookies earnCookies;
+    BuyUpgrades buyUpgrades;
     TMP_Text  cookiesLabel;
     
     void Start()
@@ -15,11 +16,17 @@ public class CookieButtonView : MonoBehaviour, ICookieDisplay
        cookiesLabel = gameObject.GetComponentInChildren<TMP_Text>();
        cookieStore = new CookieStore();
        earnCookies = new EarnCookies(cookieStore, this);
+       buyUpgrades = new BuyUpgrades(cookieStore);
     }
 
     public void ClickCookiButton()
     {
         earnCookies.Execute();
+    }
+
+    public void ClickBuyUpgradesButton()
+    {
+        buyUpgrades.Execute();
     }
 
     public void DisplayCookies(int cookies)
