@@ -1,3 +1,4 @@
+using System;
 using FluentAssertions;
 using Model;
 using NUnit;
@@ -12,7 +13,7 @@ public class CookieTest
 
         cookieStore.EarnCookie();
 
-        cookieStore.cookies.Should().Be(1);
+        cookieStore.Cookies.Should().Be(1);
     }
     
     [Test]
@@ -23,7 +24,7 @@ public class CookieTest
         cookieStore.EarnCookie();
         cookieStore.EarnCookie();
 
-        cookieStore.cookies.Should().Be(2);
+        cookieStore.Cookies.Should().Be(2);
     }
     
     [Test]
@@ -31,7 +32,7 @@ public class CookieTest
     {
         var cookieStore = new CookieStore();
 
-        cookieStore.cookies.Should().Be(0);
+        cookieStore.Cookies.Should().Be(0);
     }
     
     [Test]
@@ -42,7 +43,7 @@ public class CookieTest
         
         cookieStore.EarnCookie();
         
-        cookieStore.cookies.Should().Be(2);
+        cookieStore.Cookies.Should().Be(2);
     }
 
     [Test]
@@ -50,16 +51,22 @@ public class CookieTest
     {
         var cookieStore = new CookieStore();
         cookieStore.EarnCookie();
-        cookieStore.cookies.Should().Be(1);
+        cookieStore.Cookies.Should().Be(1);
         
         cookieStore.BuyClickMultiplier(1);
         
-        cookieStore.cookies.Should().Be(0);
+        cookieStore.Cookies.Should().Be(0);
         cookieStore.clickMultiplier.Should().Be(2);
     }
 
-    /* Tests:
-     - Cookies below 0 are not allowed
-     */
-    
+    [Test]
+    public void CookiesBelowZeroAreNotAllowed()
+    {
+        var cookieStore = new CookieStore();
+        
+        Action act = () => { cookieStore.Cookies -= 1; };
+
+        act.Should().Throw<AssertionException>();
+    }
+
 }
