@@ -18,7 +18,7 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
        earnCookies = new EarnCookies(cookieStore, this);
        buyUpgrades = new BuyUpgrades(cookieStore, this);
        
-       DisplayCookies(cookieStore.cookies);
+       DisplayCookies(cookieStore.Cookies);
        DisplayClickMultiplier(cookieStore.clickMultiplier);
     }
 

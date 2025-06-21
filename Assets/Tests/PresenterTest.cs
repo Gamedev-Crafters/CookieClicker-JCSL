@@ -13,7 +13,7 @@ public class PresenterTest
 
         earnCookies.Execute();
 
-        cookieStore.cookies.Should().Be(1);
+        cookieStore.Cookies.Should().Be(1);
     }
 
     [Test]

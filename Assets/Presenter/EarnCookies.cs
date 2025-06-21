@@ -11,13 +11,13 @@ namespace Presenter
         {
             this.cookieStore = cookieStore;
             this.cookieDisplay = cookieDisplay;
-            cookieDisplay.DisplayCookies(cookieStore.cookies);
+            cookieDisplay.DisplayCookies(cookieStore.Cookies);
         }
 
         public void Execute()
         {
             cookieStore.EarnCookie();
-            cookieDisplay.DisplayCookies(cookieStore.cookies);
+            cookieDisplay.DisplayCookies(cookieStore.Cookies);
         }
     }
 }
