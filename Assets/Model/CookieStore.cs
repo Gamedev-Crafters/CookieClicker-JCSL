@@ -13,7 +13,7 @@ namespace Model
             cookies += clickMultiplier;
         }
 
-        public void EarnClickMultiplier()
+        private void EarnClickMultiplier()
         {
             clickMultiplier ++;
         }

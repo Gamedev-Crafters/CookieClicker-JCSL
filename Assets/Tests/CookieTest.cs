@@ -45,6 +45,19 @@ public class CookieTest
         cookieStore.cookies.Should().Be(2);
     }
 
+    [Test]
+    public void BuyMultiplier()
+    {
+        var cookieStore = new CookieStore();
+        cookieStore.EarnCookie();
+        cookieStore.cookies.Should().Be(1);
+        
+        cookieStore.BuyClickMultiplier(1);
+        
+        cookieStore.cookies.Should().Be(0);
+        cookieStore.clickMultiplier.Should().Be(2);
+    }
+
     /* Tests:
      - Cookies below 0 are not allowed
      */

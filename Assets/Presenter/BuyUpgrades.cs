@@ -15,7 +15,7 @@ namespace Presenter
 
         public void Execute()
         {
-            cookieStore.EarnClickMultiplier();
+            cookieStore.BuyClickMultiplier(0);
             clickMultiplierDisplay.DisplayClickMultiplier(cookieStore.clickMultiplier);
         }
     }
