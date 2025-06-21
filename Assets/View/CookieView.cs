@@ -22,7 +22,7 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
        DisplayClickMultiplier(cookieStore.clickMultiplier);
     }
 
-    public void ClickCookiButton()
+    public void ClickCookieButton()
     {
         earnCookies.Execute();
     }
