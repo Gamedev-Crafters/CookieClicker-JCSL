@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace Model
 {
     public class CookieStore
@@ -14,6 +16,13 @@ namespace Model
         public void EarnClickMultiplier()
         {
             clickMultiplier ++;
+        }
+
+        public void BuyClickMultiplier(int cookieCost)
+        {
+            Assert.IsTrue(cookieCost <= cookies);
+            cookies -= cookieCost;
+            EarnClickMultiplier();
         }
     }
 }
