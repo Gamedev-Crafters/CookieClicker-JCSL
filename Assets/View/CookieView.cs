@@ -41,7 +41,6 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
     private void ClickBuyUpgradesButton()
     {
         _buyUpgrades.Execute();
-        DisplayCookies(cookieStore.Cookies);
     }
 
     public void DisplayCookies(int cookies)

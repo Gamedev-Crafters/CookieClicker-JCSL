@@ -17,7 +17,7 @@ namespace View
         {
             _cookieStore = new CookieStore();
             _earnCookies = new EarnCookies(_cookieStore, cookieView);
-            _buyUpgrades = new BuyUpgrades(_cookieStore, cookieView);
+            _buyUpgrades = new BuyUpgrades(_cookieStore, cookieView, cookieView);
         }
     }
 }
