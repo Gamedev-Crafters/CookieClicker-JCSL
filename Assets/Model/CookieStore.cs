@@ -16,6 +16,7 @@ namespace Model
         }
         
         public int clickMultiplier = 1;
+        public const int CLICK_MULTIPLIER_COST = 5;
         
         private int _cookies;
         
@@ -29,10 +30,10 @@ namespace Model
             clickMultiplier ++;
         }
 
-        public void BuyClickMultiplier(int cookieCost)
+        public void BuyClickMultiplier()
         {
-            Assert.IsTrue(cookieCost <= Cookies);
-            Cookies -= cookieCost;
+            Assert.IsTrue(CLICK_MULTIPLIER_COST <= Cookies);
+            Cookies -= CLICK_MULTIPLIER_COST;
             EarnClickMultiplier();
         }
     }

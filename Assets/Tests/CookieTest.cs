@@ -53,7 +53,7 @@ public class CookieTest
         cookieStore.EarnCookie();
         cookieStore.Cookies.Should().Be(1);
         
-        cookieStore.BuyClickMultiplier(1);
+        cookieStore.BuyClickMultiplier();
         
         cookieStore.Cookies.Should().Be(0);
         cookieStore.clickMultiplier.Should().Be(2);
