@@ -2,7 +2,7 @@
 
 [ ] - Serparar la vista única en más vistas
 
-[ ] - Orquestador y gestor de dependencias
+[x] - Orquestador y gestor de dependencias
 
 [ ] - Modelo de tiempo ¿?
 
