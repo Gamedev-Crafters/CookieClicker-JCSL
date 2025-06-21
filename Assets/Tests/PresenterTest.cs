@@ -32,7 +32,7 @@ public class PresenterTest
     public void EarnMultiplier()
     {
         var cookieStore = new CookieStore();
-        var buyUpgrades = new BuyUpgrades(cookieStore, new FakeCookieDisplay());
+        var buyUpgrades = new BuyUpgrades(cookieStore, new FakeCookieDisplay(), new FakeCookieDisplay());
         cookieStore.Cookies = CookieStore.CLICK_MULTIPLIER_COST;
         
         buyUpgrades.Execute();
@@ -45,11 +45,13 @@ public class PresenterTest
     {   
         var cookieStore = new CookieStore();
         var clickMultiplierDisplay = new FakeCookieDisplay();
-        var buyUpgrades = new BuyUpgrades(cookieStore, clickMultiplierDisplay);
+        var clickCookieDisplay = new FakeCookieDisplay();
+        var buyUpgrades = new BuyUpgrades(cookieStore, clickMultiplierDisplay, clickCookieDisplay);
         cookieStore.Cookies = CookieStore.CLICK_MULTIPLIER_COST;
         
         buyUpgrades.Execute();
         
         clickMultiplierDisplay.DisplayedClickMultiplier.Should().Be(2);
+        clickCookieDisplay.DisplayedCookies.Should().Be(0);
     }
 }
