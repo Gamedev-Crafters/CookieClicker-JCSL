@@ -642,7 +642,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookiesLabel: {fileID: 52858967}
+  clickCookieButton: {fileID: 1551917112}
   clickMultiplierLabel: {fileID: 307130365}
+  clickBuyUpgradeButton: {fileID: 1855013662}
 --- !u!4 &670392284
 Transform:
   m_ObjectHideFlags: 0
@@ -922,19 +924,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1551917113}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 670392283}
-        m_TargetAssemblyTypeName: CookieView, NewAssembly
-        m_MethodName: ClickCookieButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1551917113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,19 +1045,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1855013663}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 670392283}
-        m_TargetAssemblyTypeName: CookieView, NewAssembly
-        m_MethodName: ClickBuyUpgradesButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1855013663
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,16 +3,22 @@ using Model;
 using Presenter;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
 {
     CookieStore cookieStore;
     EarnCookies earnCookies;
     BuyUpgrades buyUpgrades;
+
     public TMP_Text  cookiesLabel;
-    public TMP_Text clickMultiplierLabel;
+    public Button clickCookieButton;
     
-    void Start()
+    
+    public TMP_Text clickMultiplierLabel;
+    public Button clickBuyUpgradeButton;
+    
+    private void Start()
     {
        cookieStore = new CookieStore();
        earnCookies = new EarnCookies(cookieStore, this);
@@ -20,16 +26,20 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
        
        DisplayCookies(cookieStore.Cookies);
        DisplayClickMultiplier(cookieStore.clickMultiplier);
+       
+       clickCookieButton.onClick.AddListener(ClickCookieButton);
+       clickBuyUpgradeButton.onClick.AddListener(ClickBuyUpgradesButton);
     }
-
-    public void ClickCookieButton()
+    
+    private void ClickCookieButton()
     {
         earnCookies.Execute();
     }
 
-    public void ClickBuyUpgradesButton()
+    private void ClickBuyUpgradesButton()
     {
         buyUpgrades.Execute();
+        DisplayCookies(cookieStore.Cookies);
     }
 
     public void DisplayCookies(int cookies)
