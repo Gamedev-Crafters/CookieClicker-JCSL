@@ -7,25 +7,22 @@ using UnityEngine.UI;
 
 public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
 {
-    CookieStore cookieStore;
-    EarnCookies earnCookies;
-    BuyUpgrades buyUpgrades;
-
     public TMP_Text  cookiesLabel;
     public Button clickCookieButton;
-    
     
     public TMP_Text clickMultiplierLabel;
     public Button clickBuyUpgradeButton;
     
-    private void Start()
+    private EarnCookies _earnCookies;
+    private BuyUpgrades _buyUpgrades;
+    
+    public void Initialize(int initialCookies, int initialClickMultiplier, EarnCookies earnCookies, BuyUpgrades buyUpgrades)
     {
-       cookieStore = new CookieStore();
-       earnCookies = new EarnCookies(cookieStore, this);
-       buyUpgrades = new BuyUpgrades(cookieStore, this);
-       
-       DisplayCookies(cookieStore.Cookies);
-       DisplayClickMultiplier(cookieStore.clickMultiplier);
+        _earnCookies = earnCookies;
+        _buyUpgrades = buyUpgrades;
+        
+       DisplayCookies(initialCookies);
+       DisplayClickMultiplier(initialClickMultiplier);
        
        clickCookieButton.onClick.AddListener(ClickCookieButton);
        clickBuyUpgradeButton.onClick.AddListener(ClickBuyUpgradesButton);
@@ -33,17 +30,17 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
 
     private void Update()
     {
-        clickBuyUpgradeButton.interactable = buyUpgrades.CanExecute;
+        clickBuyUpgradeButton.interactable = _buyUpgrades.CanExecute;
     }
     
     private void ClickCookieButton()
     {
-        earnCookies.Execute();
+        _earnCookies.Execute();
     }
 
     private void ClickBuyUpgradesButton()
     {
-        buyUpgrades.Execute();
+        _buyUpgrades.Execute();
         DisplayCookies(cookieStore.Cookies);
     }
 
