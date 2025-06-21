@@ -36,5 +36,10 @@ namespace Model
             Cookies -= CLICK_MULTIPLIER_COST;
             EarnClickMultiplier();
         }
+
+        public bool CanBuyClickMultiplierUpgrade()
+        {
+            return _cookies >= CLICK_MULTIPLIER_COST;
+        }
     }
 }

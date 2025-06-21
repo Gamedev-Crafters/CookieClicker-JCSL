@@ -18,5 +18,7 @@ namespace Presenter
             cookieStore.BuyClickMultiplier();
             clickMultiplierDisplay.DisplayClickMultiplier(cookieStore.clickMultiplier);
         }
+        
+        public bool CanExecute => cookieStore.CanBuyClickMultiplierUpgrade();
     }
 }

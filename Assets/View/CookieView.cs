@@ -30,6 +30,11 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
        clickCookieButton.onClick.AddListener(ClickCookieButton);
        clickBuyUpgradeButton.onClick.AddListener(ClickBuyUpgradesButton);
     }
+
+    private void Update()
+    {
+        clickBuyUpgradeButton.interactable = buyUpgrades.CanExecute;
+    }
     
     private void ClickCookieButton()
     {
