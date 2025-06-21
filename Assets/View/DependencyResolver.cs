@@ -13,7 +13,7 @@ namespace View
         private EarnCookies _earnCookies;
         private BuyUpgrades _buyUpgrades;
         
-        private void Start()
+        private void Awake()
         {
             _cookieStore = new CookieStore();
             _earnCookies = new EarnCookies(_cookieStore, cookieView);
