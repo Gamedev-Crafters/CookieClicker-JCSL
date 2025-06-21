@@ -4,21 +4,21 @@ namespace Presenter
 {
     public class BuyUpgrades
     {
-        CookieStore cookieStore;
-        IClickMultiplierDisplay clickMultiplierDisplay;
+        private CookieStore _cookieStore;
+        private IClickMultiplierDisplay _clickMultiplierDisplay;
         
         public BuyUpgrades(CookieStore cookieStore, IClickMultiplierDisplay clickMultiplierDisplay)
         {
-            this.cookieStore = cookieStore;
-            this.clickMultiplierDisplay = clickMultiplierDisplay;
+            _cookieStore = cookieStore;
+            _clickMultiplierDisplay = clickMultiplierDisplay;
         }
 
         public void Execute()
         {
-            cookieStore.BuyClickMultiplier();
-            clickMultiplierDisplay.DisplayClickMultiplier(cookieStore.clickMultiplier);
+            _cookieStore.BuyClickMultiplier();
+            _clickMultiplierDisplay.DisplayClickMultiplier(_cookieStore.clickMultiplier);
         }
         
-        public bool CanExecute => cookieStore.CanBuyClickMultiplierUpgrade();
+        public bool CanExecute => _cookieStore.CanBuyClickMultiplierUpgrade();
     }
 }

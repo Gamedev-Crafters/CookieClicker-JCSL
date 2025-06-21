@@ -4,20 +4,20 @@ namespace Presenter
 {
     public class EarnCookies
     {
-        CookieStore cookieStore;
-        ICookieDisplay cookieDisplay;
+        private CookieStore _cookieStore;
+        private ICookieDisplay _cookieDisplay;
     
         public EarnCookies(CookieStore cookieStore, ICookieDisplay cookieDisplay)
         {
-            this.cookieStore = cookieStore;
-            this.cookieDisplay = cookieDisplay;
+            _cookieStore = cookieStore;
+            _cookieDisplay = cookieDisplay;
             cookieDisplay.DisplayCookies(cookieStore.Cookies);
         }
 
         public void Execute()
         {
-            cookieStore.EarnCookie();
-            cookieDisplay.DisplayCookies(cookieStore.Cookies);
+            _cookieStore.EarnCookie();
+            _cookieDisplay.DisplayCookies(_cookieStore.Cookies);
         }
     }
 }
