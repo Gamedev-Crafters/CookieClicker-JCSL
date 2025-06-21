@@ -33,7 +33,8 @@ public class PresenterTest
     {
         var cookieStore = new CookieStore();
         var buyUpgrades = new BuyUpgrades(cookieStore, new FakeCookieDisplay());
-
+        cookieStore.Cookies = CookieStore.CLICK_MULTIPLIER_COST;
+        
         buyUpgrades.Execute();
         
         cookieStore.clickMultiplier.Should().Be(2);
@@ -45,6 +46,7 @@ public class PresenterTest
         var cookieStore = new CookieStore();
         var clickMultiplierDisplay = new FakeCookieDisplay();
         var buyUpgrades = new BuyUpgrades(cookieStore, clickMultiplierDisplay);
+        cookieStore.Cookies = CookieStore.CLICK_MULTIPLIER_COST;
         
         buyUpgrades.Execute();
         
