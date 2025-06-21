@@ -50,8 +50,8 @@ public class CookieTest
     public void BuyMultiplier()
     {
         var cookieStore = new CookieStore();
-        cookieStore.EarnCookie();
-        cookieStore.Cookies.Should().Be(1);
+        cookieStore.Cookies = CookieStore.CLICK_MULTIPLIER_COST;
+        cookieStore.Cookies.Should().Be(CookieStore.CLICK_MULTIPLIER_COST);
         
         cookieStore.BuyClickMultiplier();
         
