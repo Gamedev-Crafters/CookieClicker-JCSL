@@ -4,9 +4,13 @@
 
 [x] - Orquestador y gestor de dependencias
 
-[ ] - Modelo de tiempo ¿?
+[X] - Modelo de tiempo
 
-[ ] - Hacer autoclickers
+[x] - Hacer autoclicker
+
+[ ] - Ganar galletas usando el autoclicker
+
+[ ] - Serparar test de presentadores
 
 [ ] - Hacer edificios (ABUELAS)
 
