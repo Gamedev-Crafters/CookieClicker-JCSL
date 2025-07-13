@@ -56,7 +56,7 @@ public class PresenterTest
     }
 
     [Test]
-    public void EarnCookieByAutoClick()
+    public void EarnOneCookieWithAutoClick()
     {
         CookieStore cookieStore = new CookieStore();
         AutoClicker autoClicker = new AutoClicker(1f);
