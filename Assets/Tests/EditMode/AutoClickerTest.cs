@@ -15,20 +15,36 @@ namespace Tests.EditMode
             autoClicker.autoClick.Should().BeGreaterThan(1);
         }
 
+        [Test]
+        public void TriggerEventAfterTwoSeconds()
+        {
+            AutoClicker autoClicker = new AutoClicker(2f);
+            
+            autoClicker.UpdateTime(2f);
+
+            autoClicker.autoClick.Should().Be(1);
+        }
+        
         public class AutoClicker
         {
             public int autoClick { get; set; }
 
-            private float _autoClickTime;
+            private float _autoClickTargetTime;
+            private float _timePassed;
             
-            public AutoClicker(float autoClickTime)
+            public AutoClicker(float autoClickTargetTime)
             {
-                _autoClickTime = autoClickTime;
+                _autoClickTargetTime = autoClickTargetTime;
             }
             
             public void UpdateTime(float deltaTime)
             {
-                autoClick = 2;
+                _timePassed += deltaTime;
+
+                if (_timePassed >= _autoClickTargetTime)
+                {
+                    autoClick++;
+                }
             }
         }
     }
