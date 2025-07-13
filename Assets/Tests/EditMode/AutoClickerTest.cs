@@ -2,28 +2,25 @@ using FluentAssertions;
 using Model;
 using NUnit.Framework;
 
-namespace Tests.EditMode
+public class AutoClickerTest
 {
-    public class AutoClickerTest
+    [Test]
+    public void TriggerAutoClick5Times()
     {
-        [Test]
-        public void TriggerAutoClick5Times()
-        {
-            AutoClicker autoClicker = new AutoClicker(1f);
-            
-            autoClicker.UpdateTime(5f);
+        AutoClicker autoClicker = new AutoClicker(1f);
 
-            autoClicker.autoClick.Should().Be(5);
-        }
+        autoClicker.UpdateTime(5f);
 
-        [Test]
-        public void TriggerAutoClickAfterTwoSeconds()
-        {
-            AutoClicker autoClicker = new AutoClicker(2f);
-            
-            autoClicker.UpdateTime(2f);
+        autoClicker.autoClick.Should().Be(5);
+    }
 
-            autoClicker.autoClick.Should().Be(1);
-        }
+    [Test]
+    public void TriggerAutoClickAfterTwoSeconds()
+    {
+        AutoClicker autoClicker = new AutoClicker(2f);
+
+        autoClicker.UpdateTime(2f);
+
+        autoClicker.autoClick.Should().Be(1);
     }
 }
