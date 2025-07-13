@@ -67,8 +67,19 @@ public class PresenterTest
         autoClicker.autoClick.Should().Be(1);
         cookieStore.Cookies.Should().Be(1);
     }
-    
-    
+
+    [Test]
+    public void EarnTwoCookiesWithAutoClick()
+    {
+        CookieStore cookieStore = new CookieStore();
+        AutoClicker autoClicker = new AutoClicker(1f);
+        AutoEarnCookies autoEarnCookies = new AutoEarnCookies(cookieStore, autoClicker);
+
+        autoEarnCookies.Execute(2f);
+
+        autoClicker.autoClick.Should().Be(2);
+        cookieStore.Cookies.Should().Be(2);
+    }
 }
 
 public class AutoEarnCookies
