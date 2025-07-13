@@ -1,12 +1,13 @@
 using Model;
 using Presenter;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace View
 {
     public class DependencyResolver : MonoBehaviour
     {
-        public CookieView cookieView;
+        [FormerlySerializedAs("cookieView")] public MultiplierButtonView _multiplierButtonView;
         
         
         private CookieStore _cookieStore;
@@ -16,10 +17,10 @@ namespace View
         private void Awake()
         {
             _cookieStore = new CookieStore();
-            _earnCookies = new EarnCookies(_cookieStore, cookieView);
-            _buyUpgrades = new BuyUpgrades(_cookieStore, cookieView, cookieView);
+            _earnCookies = new EarnCookies(_cookieStore, _multiplierButtonView);
+            _buyUpgrades = new BuyUpgrades(_cookieStore, _multiplierButtonView, _multiplierButtonView);
             
-            cookieView.Initialize(_cookieStore.Cookies,_cookieStore.clickMultiplier,_earnCookies,_buyUpgrades);
+            _multiplierButtonView.Initialize(_cookieStore.Cookies,_cookieStore.clickMultiplier,_earnCookies,_buyUpgrades);
         }
     }
 }
