@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 670392284}
   - component: {fileID: 670392283}
   m_Layer: 0
-  m_Name: CookieView
+  m_Name: MiltiplierButtonView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,8 +641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bf5c60e171a224694a35721676c978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookiesLabel: {fileID: 52858967}
-  clickCookieButton: {fileID: 1551917112}
   clickMultiplierLabel: {fileID: 307130365}
   clickBuyUpgradeButton: {fileID: 1855013662}
 --- !u!4 &670392284
@@ -871,7 +869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb55974176ba44b5ada04c777ea5a39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookieView: {fileID: 670392283}
+  cookieButtonView: {fileID: 2075521778}
+  multiplierButtonView: {fileID: 670392283}
 --- !u!4 &1453068897
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,6 +1128,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855013660}
   m_CullTransparentMesh: 1
+--- !u!1 &2075521777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2075521779}
+  - component: {fileID: 2075521778}
+  m_Layer: 0
+  m_Name: CookieButtonView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2075521778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075521777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dcb665adb2488baa5c2b2ac9b7e88d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookiesLabel: {fileID: 52858967}
+  clickCookieButton: {fileID: 1551917112}
+--- !u!4 &2075521779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075521777}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1138,4 +1183,5 @@ SceneRoots:
   - {fileID: 1359098965}
   - {fileID: 1089555031}
   - {fileID: 670392284}
+  - {fileID: 2075521779}
   - {fileID: 1453068897}
