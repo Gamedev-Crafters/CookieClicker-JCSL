@@ -9,9 +9,9 @@ public class AutoClickerTest
     {
         AutoClicker autoClicker = new AutoClicker(1f);
 
-        autoClicker.UpdateTime(5f);
+        int autoClick = autoClicker.UpdateTime(5f);
 
-        autoClicker.autoClick.Should().Be(5);
+        autoClick.Should().Be(5);
     }
 
     [Test]
@@ -19,8 +19,8 @@ public class AutoClickerTest
     {
         AutoClicker autoClicker = new AutoClicker(2f);
 
-        autoClicker.UpdateTime(2f);
+        int autoClick = autoClicker.UpdateTime(2f);
 
-        autoClicker.autoClick.Should().Be(1);
+        autoClick.Should().Be(1);
     }
 }

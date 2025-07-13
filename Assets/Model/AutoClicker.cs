@@ -2,8 +2,6 @@ namespace Model
 {
     public class AutoClicker
     {
-        public int autoClick { get; set; }
-
         private float _autoClickTargetTime;
         private float _timePassed;
 
@@ -12,15 +10,19 @@ namespace Model
             _autoClickTargetTime = autoClickTargetTime;
         }
 
-        public void UpdateTime(float deltaTime)
+        public int UpdateTime(float deltaTime)
         {
+            int autoClick = 0;
             _timePassed += deltaTime;
 
             if (_timePassed >= _autoClickTargetTime)
             {
                 float autoClicksAmount = _timePassed / _autoClickTargetTime;
                 autoClick += (int)autoClicksAmount;
+                _timePassed = 0;
             }
+            
+            return autoClick; 
         }
     }
 }

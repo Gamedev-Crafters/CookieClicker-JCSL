@@ -63,11 +63,23 @@ public class PresenterTest
         AutoEarnCookies autoEarnCookies = new AutoEarnCookies(cookieStore, autoClicker);
 
         autoEarnCookies.Execute(1f);
-
-        autoClicker.autoClick.Should().Be(1);
+        
         cookieStore.Cookies.Should().Be(1);
     }
 
+    [Test]
+    public void EarnOneCookieWithAutoClick2()
+    {
+        CookieStore cookieStore = new CookieStore();
+        AutoClicker autoClicker = new AutoClicker(1f);
+        AutoEarnCookies autoEarnCookies = new AutoEarnCookies(cookieStore, autoClicker);
+
+        autoEarnCookies.Execute(1f);
+        autoEarnCookies.Execute(1f);
+        
+        cookieStore.Cookies.Should().Be(2);
+    }
+    
     [Test]
     public void EarnTwoCookiesWithAutoClick()
     {
@@ -76,8 +88,7 @@ public class PresenterTest
         AutoEarnCookies autoEarnCookies = new AutoEarnCookies(cookieStore, autoClicker);
 
         autoEarnCookies.Execute(2f);
-
-        autoClicker.autoClick.Should().Be(2);
+        
         cookieStore.Cookies.Should().Be(2);
     }
 }
@@ -95,9 +106,9 @@ public class AutoEarnCookies
 
     public void Execute(float deltaTime)
     {
-        _autoClicker.UpdateTime(deltaTime);
+        int autoClick = _autoClicker.UpdateTime(deltaTime);
 
-        for (int i = 0; i < _autoClicker.autoClick; i++)
+        for (int i = 0; i < autoClick; i++)
         {
             _cookieStore.EarnCookie();
         }
