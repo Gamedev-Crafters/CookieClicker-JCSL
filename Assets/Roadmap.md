@@ -1,6 +1,6 @@
 [x] - Precondición de compra y pago
 
-[ ] - Serparar la vista única en más vistas
+[x] - Serparar la vista única en más vistas
 
 [x] - Orquestador y gestor de dependencias
 
