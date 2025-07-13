@@ -96,6 +96,10 @@ public class AutoEarnCookies
     public void Execute(float deltaTime)
     {
         _autoClicker.UpdateTime(deltaTime);
-        _cookieStore.EarnCookie();
+
+        for (int i = 0; i < _autoClicker.autoClick; i++)
+        {
+            _cookieStore.EarnCookie();
+        }
     }
 }
