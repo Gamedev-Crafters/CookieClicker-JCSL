@@ -8,9 +8,11 @@
 
 [x] - Hacer autoclicker
 
-[ ] - Ganar galletas usando el autoclicker
+[x] - Ganar galletas usando el autoclicker
 
 [ ] - Serparar test de presentadores
+
+[ ] - Hacer la vista del autoclicker
 
 [ ] - Hacer edificios (ABUELAS)
 
