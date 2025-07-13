@@ -7,8 +7,8 @@ namespace View
 {
     public class DependencyResolver : MonoBehaviour
     {
-        [FormerlySerializedAs("cookieView")] public MultiplierButtonView _multiplierButtonView;
-        
+        public CookieButtonView cookieButtonView;
+        public MultiplierButtonView multiplierButtonView;
         
         private CookieStore _cookieStore;
         private EarnCookies _earnCookies;
@@ -17,10 +17,11 @@ namespace View
         private void Awake()
         {
             _cookieStore = new CookieStore();
-            _earnCookies = new EarnCookies(_cookieStore, _multiplierButtonView);
-            _buyUpgrades = new BuyUpgrades(_cookieStore, _multiplierButtonView, _multiplierButtonView);
+            _earnCookies = new EarnCookies(_cookieStore, cookieButtonView);
+            _buyUpgrades = new BuyUpgrades(_cookieStore, multiplierButtonView, cookieButtonView);
             
-            _multiplierButtonView.Initialize(_cookieStore.Cookies,_cookieStore.clickMultiplier,_earnCookies,_buyUpgrades);
+            cookieButtonView.Initialize(_cookieStore.Cookies,_earnCookies);
+            multiplierButtonView.Initialize(_cookieStore.clickMultiplier, _buyUpgrades);
         }
     }
 }
