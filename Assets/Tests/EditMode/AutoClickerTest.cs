@@ -6,17 +6,17 @@ namespace Tests.EditMode
     public class AutoClickerTest
     {
         [Test]
-        public void TriggerEventAfterTime()
+        public void TriggerAutoClick5Times()
         {
             AutoClicker autoClicker = new AutoClicker(1f);
             
             autoClicker.UpdateTime(5f);
 
-            autoClicker.autoClick.Should().BeGreaterThan(1);
+            autoClicker.autoClick.Should().Be(5);
         }
 
         [Test]
-        public void TriggerEventAfterTwoSeconds()
+        public void TriggerAutoClickAfterTwoSeconds()
         {
             AutoClicker autoClicker = new AutoClicker(2f);
             
@@ -43,7 +43,8 @@ namespace Tests.EditMode
 
                 if (_timePassed >= _autoClickTargetTime)
                 {
-                    autoClick++;
+                    float autoClicksAmount = _timePassed / _autoClickTargetTime;
+                    autoClick+=(int)autoClicksAmount;
                 }
             }
         }
