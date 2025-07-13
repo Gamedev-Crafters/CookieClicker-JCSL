@@ -1,7 +1,6 @@
 using Model;
 using Presenter;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace View
 {
