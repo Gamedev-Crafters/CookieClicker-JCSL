@@ -54,4 +54,37 @@ public class PresenterTest
         clickMultiplierDisplay.DisplayedClickMultiplier.Should().Be(2);
         clickCookieDisplay.DisplayedCookies.Should().Be(0);
     }
+
+    [Test]
+    public void EarnCookieByAutoClick()
+    {
+        CookieStore cookieStore = new CookieStore();
+        AutoClicker autoClicker = new AutoClicker(1f);
+        AutoEarnCookies autoEarnCookies = new AutoEarnCookies(cookieStore, autoClicker);
+
+        autoEarnCookies.Execute(1f);
+
+        autoClicker.autoClick.Should().Be(1);
+        cookieStore.Cookies.Should().Be(1);
+    }
+    
+    
+}
+
+public class AutoEarnCookies
+{
+    private CookieStore _cookieStore;
+    private AutoClicker _autoClicker;
+    
+    public AutoEarnCookies(CookieStore cookieStore, AutoClicker autoClicker)
+    {
+        _cookieStore = cookieStore;
+        _autoClicker = autoClicker;
+    }
+
+    public void Execute(float deltaTime)
+    {
+        _autoClicker.UpdateTime(deltaTime);
+        _cookieStore.EarnCookie();
+    }
 }
