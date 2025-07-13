@@ -1,5 +1,3 @@
-using System;
-using Model;
 using Presenter;
 using TMPro;
 using UnityEngine;
@@ -21,13 +19,21 @@ public class CookieView : MonoBehaviour, ICookieDisplay, IClickMultiplierDisplay
         _earnCookies = earnCookies;
         _buyUpgrades = buyUpgrades;
         
-       DisplayCookies(initialCookies);
-       DisplayClickMultiplier(initialClickMultiplier);
+        DisplayCookies(initialCookies);
+        DisplayClickMultiplier(initialClickMultiplier);
        
-       clickCookieButton.onClick.AddListener(ClickCookieButton);
-       clickBuyUpgradeButton.onClick.AddListener(ClickBuyUpgradesButton);
+        clickCookieButton.onClick.AddListener(ClickCookieButton);
+        clickBuyUpgradeButton.onClick.AddListener(ClickBuyUpgradesButton);
     }
 
+    
+    public void Initialize(int initialClickMultiplier, BuyUpgrades buyUpgrades)
+    {
+        _buyUpgrades = buyUpgrades;
+        DisplayClickMultiplier(initialClickMultiplier);
+        clickBuyUpgradeButton.onClick.AddListener(ClickBuyUpgradesButton);
+    }
+    
     private void Update()
     {
         clickBuyUpgradeButton.interactable = _buyUpgrades.CanExecute;
