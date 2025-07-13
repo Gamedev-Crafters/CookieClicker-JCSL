@@ -1,3 +1,6 @@
+using System;
+using UnityEngine.Assertions;
+
 namespace Model
 {
     public class AutoClicker
@@ -19,7 +22,8 @@ namespace Model
             {
                 float autoClicksAmount = _timePassed / _autoClickTargetTime;
                 autoClick += (int)autoClicksAmount;
-                _timePassed = 0;
+                _timePassed -= autoClick;
+                Assert.IsTrue(_timePassed >= 0);
             }
             
             return autoClick; 
